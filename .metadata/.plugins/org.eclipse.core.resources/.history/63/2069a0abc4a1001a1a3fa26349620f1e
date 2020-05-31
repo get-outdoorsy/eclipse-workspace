@@ -1,0 +1,21 @@
+/**
+ * 
+ */
+package javaEclipseTest;
+
+/**
+ * @author Epoy
+ *
+ */
+public class indexClass {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		System.out.println("Sana Jay magpractice kana para maging mamaw kana magcode. Okay ba!");
+
+	}
+}

@@ -1,0 +1,23 @@
+/**
+ * 
+ */
+package javaEclipseTest;
+
+/**
+ * @author Epoy
+ *
+ */
+import java.util.Scanner;
+public class IndexClass {
+
+	/**
+	 * @param args
+	 */
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner input = new Scanner(System.in);	
+		
+		Person cred = new Person();
+	}
+}

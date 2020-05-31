@@ -1,0 +1,34 @@
+/**
+ * 
+ */
+package javaEclipseTest;
+
+/**
+ * @author Epoy
+ *
+ */
+
+public class indexClass {
+
+	/**
+	 * @param args
+	 */
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int[][] myNumbers = {{1,2,3}, {4,5,6} };
+		
+		for(int a = 0; a < myNumbers.length; ++a)
+		{
+			for(int b = 0; b < myNumbers[a].length; ++b)
+			{
+				System.out.println(myNumbers[a][b]);
+			}
+		}
+		
+	}
+	
+	
+	
+	
+}

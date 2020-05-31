@@ -1,0 +1,27 @@
+/**
+ * 
+ */
+package javaEclipseTest;
+
+/**
+ * @author Epoy
+ *
+ */
+
+public class IndexClass {
+
+	/**
+	 * @param args
+	 */
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		UserInput data = new UserInput();
+		String firstName = data.userFname;
+		String lastName = data.userLname;
+		int age = data.userAge;
+		
+		Person cred = new Person(firstName, lastName, age);
+		
+	}
+}

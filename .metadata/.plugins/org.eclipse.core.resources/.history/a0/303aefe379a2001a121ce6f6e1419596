@@ -1,0 +1,19 @@
+package javaEclipseTest;
+
+public class Person {
+	
+	//credentials
+	String frstName = "Jay";
+	String lstName = "Mendezabal";
+	int age = 22;
+	
+	public void displayMsg()
+	{
+		System.out.print("Hello World!");
+	}
+	
+	public void checkAge(String frstName, String lstName, int age)
+	{
+		System.out.print(frstName + lstName + " is currently "+age);
+	}
+}

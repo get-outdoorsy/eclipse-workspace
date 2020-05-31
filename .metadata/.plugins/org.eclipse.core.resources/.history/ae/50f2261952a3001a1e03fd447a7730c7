@@ -1,0 +1,15 @@
+package javaEclipseTest;
+
+public class IndexClass {
+	
+	public static void main(String[] args) {
+		Person info = new Person();
+		
+		System.out.print(info.frstName+"\n");
+		System.out.print(info.lName+"\n");
+		System.out.print(info.age+"\n");
+		System.out.print(info.carName+"\n");
+		System.out.print(info.plateNum+"\n");
+		
+	}
+}

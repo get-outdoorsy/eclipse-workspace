@@ -1,0 +1,8 @@
+package javaEclipseTest;
+
+public abstract class TestAbstract {
+	public String carName = "Toyota";
+	public String plateNum = "22Ae";
+	
+	public abstract displayInfo();
+}

@@ -1,0 +1,33 @@
+/**
+ * 
+ */
+package javaEclipseTest;
+
+/**
+ * @author Epoy
+ *
+ */
+
+public class IndexClass {
+
+	/**
+	 * @param args
+	 */
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Person cred = new Person();
+		
+		//these fields came from Person class
+		String fName = cred.frstName;
+		String lName = cred.lstName;
+		int age = cred.age;
+		
+		cred.checkAge(fName, lName, age); // <-- displays the info from Person class.
+		
+	}
+	
+	
+	
+	
+}

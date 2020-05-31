@@ -1,0 +1,28 @@
+/**
+ * 
+ */
+package javaEclipseTest;
+
+/**
+ * @author Epoy
+ *
+ */
+
+public class indexClass {
+
+	/**
+	 * @param args
+	 */
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		OtherClass obj = new OtherClass();
+		obj.x = 10;
+		System.out.println(obj.x);
+		
+	}
+	
+	
+	
+	
+}

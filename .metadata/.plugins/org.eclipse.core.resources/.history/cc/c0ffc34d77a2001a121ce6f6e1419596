@@ -1,0 +1,13 @@
+package javaEclipseTest;
+
+public class Person {
+	static void displayMsg()
+	{
+		System.out.print("Hello World!");
+	}
+	
+	//attributes
+	String frstName = "Jay";
+	String lstName = "Mendezabal";
+	int age = 22;
+}

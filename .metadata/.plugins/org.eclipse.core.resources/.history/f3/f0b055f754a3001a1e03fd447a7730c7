@@ -1,0 +1,9 @@
+package javaEclipseTest;
+
+import java.util.Scanner;
+public class IndexClass {
+	
+	public static void main(String[] args) {
+		
+	}
+}

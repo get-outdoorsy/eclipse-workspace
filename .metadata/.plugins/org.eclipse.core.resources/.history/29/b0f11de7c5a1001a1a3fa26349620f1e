@@ -1,0 +1,37 @@
+/**
+ * 
+ */
+package javaEclipseTest;
+
+/**
+ * @author Epoy
+ *
+ */
+import java.util.Scanner;
+public class indexClass {
+
+	/**
+	 * @param args
+	 */
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner input = new Scanner(System.in);
+		
+		int num1;
+		
+		System.out.print("Enter num 1: ");
+		num1 = input.nextInt();
+		
+		
+		oddEven(num1);
+		
+	}
+	
+	public static int oddEven(int num1)
+	{
+		
+	}
+	
+	
+}

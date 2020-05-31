@@ -1,0 +1,40 @@
+/**
+ * 
+ */
+package javaEclipseTest;
+
+/**
+ * @author Epoy
+ *
+ */
+import java.util.Scanner;
+public class indexClass {
+
+	/**
+	 * @param args
+	 */
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner input = new Scanner(System.in);
+		
+		int number1, number2;
+		
+		System.out.print("Enter number 1: ");
+		number1 = input.nextInt();
+		System.out.println();
+		
+		System.out.print("Enter number 2: ");
+		number2 = input.nextInt();
+		System.out.println();
+		
+		addNumbers(number1, number2);
+		
+
+	}
+	
+	public static int addNumbers(int num1, int num2)
+	{
+		return num1 + num2;
+	}
+}
