@@ -1,0 +1,5 @@
+package absConstructInheritEncapInputMeth;
+
+public abstract class UserData {
+
+}

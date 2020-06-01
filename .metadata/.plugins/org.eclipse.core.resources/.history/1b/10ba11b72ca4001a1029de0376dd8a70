@@ -1,0 +1,35 @@
+package absConstructInheritEncapInputMeth;
+
+public class PersonalInfo {
+	private String email = "lulu@gmail.com";
+	private String password = "akon123";
+	private String sex = "M";
+	
+	public void setEmail(String changedMail)
+	{
+		this.email = changedMail;
+	}
+	
+	public void setPass(String changedPass)
+	{
+		this.password = changedPass;
+	}
+	public void setSex(String changedSex)
+	{
+		this.sex = changedSex;
+	}
+	
+	public String getEmail()
+	{
+		return email;
+	}
+	public String getPassword()
+	{
+		return password;
+	}
+	public String getSex()
+	{
+		return sex;
+	}
+	
+}

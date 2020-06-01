@@ -1,0 +1,52 @@
+package absConstructInheritEncapInputMeth;
+
+import java.util.Scanner;
+public class Student_data {
+	
+	String studentName;
+	int mathGrades, englishGrades, scienceGrades, peGrades;
+	float weight, height;
+	Boolean healthy;
+	
+	public Student_data(){
+		userInput();
+	}
+	
+	void userInput(){
+		Scanner input = new Scanner(System.in);
+		
+		System.out.print("Student name: ");
+		studentName = input.next();
+		System.out.println();
+		
+		System.out.print("GRADES");
+		System.out.print("Enter student grades\n");
+		System.out.print("Math: ");
+		mathGrades = input.nextInt();
+		System.out.println();
+		
+		System.out.print("English: ");
+		englishGrades = input.nextInt();
+		System.out.println();
+		
+		System.out.print("Science: ");
+		scienceGrades = input.nextInt();
+		System.out.println();
+		
+		System.out.print("PE: ");
+		peGrades = input.nextInt();
+		System.out.println();
+		
+		System.out.print("HEALTH");
+		System.out.print("Enter student's weight: ");
+		weight = input.nextInt();
+		System.out.println();
+		
+		System.out.print("Enter student's height: ");
+		weight = input.nextInt();
+		System.out.println();
+		
+		
+		input.close();
+	}
+}
