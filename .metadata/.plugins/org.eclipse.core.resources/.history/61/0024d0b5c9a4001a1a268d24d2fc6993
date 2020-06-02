@@ -1,0 +1,10 @@
+package javaEclipseTest;
+
+public class IndexClass {
+	
+	public static void main(String[] args) {
+	
+		EnumNaNga ha = EnumNaNga.HIGH;
+		System.out.print(ha);
+	}
+}

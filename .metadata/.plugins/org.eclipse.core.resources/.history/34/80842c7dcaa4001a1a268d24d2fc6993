@@ -1,0 +1,16 @@
+package javaEclipseTest;
+
+public class IndexClass {
+	
+	enum Ulol{
+		haha,
+		huhu
+	}
+	
+	public static void main(String[] args) {
+	
+		Ulol ha = Ulol.haha;
+		System.out.print(ha);
+		
+	}
+}

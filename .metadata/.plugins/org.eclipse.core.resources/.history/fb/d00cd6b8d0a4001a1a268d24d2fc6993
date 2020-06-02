@@ -14,9 +14,9 @@ public class IndexClass {
 	public static void main(String[] args) {
 		
 		//date and time java api
-		/*LocalDateTime currentTimeZone = LocalDateTime.now();
-		DateTimeFormatter myFormat = DateTimeFormatter.ofPattern("MM-dd-yyyy \nHH:mm:ss");
+		LocalDateTime currentTimeZone = LocalDateTime.now();
+		DateTimeFormatter myFormat = DateTimeFormatter.ofPatten("MM-dd-yyyy \nHH:mm:ss");
 		
-		System.out.print(currentTimeZone.format(myFormat).toString()); */
+		System.out.print(currentTimeZone.format(myFormat).toString());
 	}
 }

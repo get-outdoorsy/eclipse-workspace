@@ -9,5 +9,4 @@ public class OuterClass {
 		}
 	}
 
-	 //static class di maaccess ang outer class
 }

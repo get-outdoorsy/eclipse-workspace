@@ -1,0 +1,10 @@
+package javaEclipseTest;
+
+public class IndexClass {
+	
+	public static void main(String[] args) {
+	
+		EnumNaNga ha = EnumNaNga.LODI;
+		System.out.print(ha);
+	}
+}

@@ -1,0 +1,28 @@
+package javaEclipseTest;
+
+public class IndexClass {
+	
+	enum Level{
+		LOW,
+		MEDIUM,
+		HIGH
+	}
+	
+	public static void main(String[] args) {
+		for(Level props : Level.values())
+		{
+			if(props.equals("HIGH"))
+			{
+				System.out.print("High kana");
+			}
+			else
+			{
+				System.out.print("Haha kana");
+				break;
+			}
+		}
+		
+		
+		
+	}
+}

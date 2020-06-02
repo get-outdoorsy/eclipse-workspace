@@ -1,0 +1,9 @@
+package javaEclipseTest;
+
+public enum EnumNaNga {
+	LOW,
+	MEDIUM,
+	HIGH,
+	LODI
+
+}

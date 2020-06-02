@@ -1,0 +1,17 @@
+package javaEclipseTest;
+
+import java.time.LocalDate;
+
+public class IndexClass {
+	
+	enum Level{
+		LOW,
+		MEDIUM,
+		HIGH
+	}
+	
+	public static void main(String[] args) {
+		LocalDate objs = new LocalDate.now();
+		
+	}
+}
