@@ -1,0 +1,19 @@
+package javaEclipseTest;
+
+public class IndexClass extends InheritanceKo {
+	
+	
+	String modelName = "Corvette";
+	public static void main(String[] args) {
+		IndexClass mainIto = new IndexClass();
+		mainIto.honk();
+		System.out.print(mainIto.modelName+" kekse "+mainIto.brand);
+		
+		
+		
+	
+		
+		
+		
+	}
+}

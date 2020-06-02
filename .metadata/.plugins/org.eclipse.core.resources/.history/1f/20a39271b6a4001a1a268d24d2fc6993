@@ -1,0 +1,11 @@
+package javaEclipseTest;
+
+public class PolymorphNaman {
+	
+	public void animalSound()
+	{
+		System.out.print("Classes can make sound.");
+	}
+}
+
+

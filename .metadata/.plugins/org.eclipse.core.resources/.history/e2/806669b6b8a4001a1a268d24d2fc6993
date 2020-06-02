@@ -1,0 +1,11 @@
+package javaEclipseTest;
+
+public class IndexClass {
+	
+	public static void main(String[] args) {
+		
+		
+		//static class di na kailangan mag creat ng object para maccess
+	
+	}
+}

@@ -1,0 +1,9 @@
+package javaEclipseTest;
+
+public class InheritanceKo {
+	public String brand = "Toyota";
+	
+	public void honk() {
+		System.out.print("Broom! Broom");
+	}
+}

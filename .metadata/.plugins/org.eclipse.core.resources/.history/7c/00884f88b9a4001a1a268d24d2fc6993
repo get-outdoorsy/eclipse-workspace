@@ -1,0 +1,14 @@
+package javaEclipseTest;
+
+public class IndexClass {
+	
+	public static void main(String[] args) {
+		OuterClass outer = new OuterClass();
+		OuterClass.InnerClass inner = outer.new InnerClass();
+		
+		System.out.print(inner.y+" "+outer.x);
+		
+	
+	
+	}
+}

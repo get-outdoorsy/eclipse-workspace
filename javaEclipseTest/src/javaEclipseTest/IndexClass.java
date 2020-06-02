@@ -1,29 +1,11 @@
 package javaEclipseTest;
 
-import java.util.Scanner;
 public class IndexClass {
 	
-	static String newPassword;
-	
 	public static void main(String[] args) {
-		userInput();
-		
-		EncapsulationTest encap = new EncapsulationTest();
-		encap.setPassword(newPassword);
-		//gumana ba ang github ko?
-		//di ko magetttsssss!
-		//guchi na ba?
-		
-		
-		System.out.print("New password: "+encap.getPassword()+"\n"+"Email: "+encap.getEmail());
-	}
+	Kupal haha = new Kupal();
+	haha.labasMo();
+	haha.awitKa();
 	
-	public static void userInput()
-	{
-		Scanner inputUser = new Scanner(System.in);
-		System.out.print("Enter new password: ");
-		newPassword = inputUser.next();
-		
-		inputUser.close();
 	}
 }

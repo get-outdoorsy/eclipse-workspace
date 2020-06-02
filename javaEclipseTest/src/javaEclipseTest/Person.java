@@ -27,4 +27,5 @@ public class Person extends TestAbstract { //<-- na inherit ang TestAbstract na 
 		System.out.print("Para saan ang abstract?");
 	}
 	
+	//tungkol naman to sa mga constuctors and methods calling
 }

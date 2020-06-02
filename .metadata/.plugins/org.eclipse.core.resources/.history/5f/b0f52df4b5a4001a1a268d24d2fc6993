@@ -1,0 +1,11 @@
+package javaEclipseTest;
+
+public class InheritanceKo extends PolymorphNaman{
+	protected  String brand = "Toyota";
+	
+	public void honk() {
+		System.out.print("Broom! Broom");
+	}
+	
+	
+}

@@ -1,0 +1,10 @@
+package javaEclipseTest;
+
+public class OuterClass {
+	int x = 5;
+	
+	static class InnerClass{
+		int y =10;
+	}
+
+}

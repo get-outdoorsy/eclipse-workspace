@@ -1,0 +1,21 @@
+package javaEclipseTest;
+
+import java.util.Scanner;
+public class IndexClass {
+	
+	
+	private String modelName = "Corvette";
+	public static void main(String[] args) {
+		InheritanceKo akin = new InheritanceKo();
+		//akin.honk();
+		
+		System.out.print
+		
+		
+		
+	
+		
+		
+		System.out.print("New password: "+encap.getPassword()+"\n"+"Email: "+encap.getEmail()); */
+	}
+}

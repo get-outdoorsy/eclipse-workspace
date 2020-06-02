@@ -1,0 +1,22 @@
+package javaEclipseTest;
+
+import java.util.Scanner;
+public class IndexClass extends InheritanceKo {
+	
+	
+	String modelName = "Corvette";
+	public static void main(String[] args) {
+		IndexClass mainIto = new IndexClass();
+		
+		
+		
+		System.out.print(mainIto.modelName+" "+maintIto.brand);
+		
+		
+		
+	
+		
+		
+		
+	}
+}
