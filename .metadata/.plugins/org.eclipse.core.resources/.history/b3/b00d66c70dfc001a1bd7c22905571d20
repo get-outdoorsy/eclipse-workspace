@@ -1,0 +1,36 @@
+package javaEclipseTest;
+
+//import java.io.*;
+
+import java.io.*;
+import java.math.*;
+import java.security.*;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.text.*;
+import java.util.*;
+import java.util.concurrent.*;
+import java.util.regex.*;
+
+import javax.swing.JOptionPane;
+
+public class IndexClass {
+	
+	public static void main(String[] args) throws ClassNotFoundException, SQLException {
+		//FileTest runIt = new FileTest();
+		
+		try {
+			Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");  
+			String connectionUrl = "jdbc:sqlserver://USER-PC\\NEWSQLSERVER;database=testDBMSsql;integratedSecurity=true;";  
+			Connection con = DriverManager.getConnection(connectionUrl);
+			
+			JOptionPane.showMessageDialog(null, "Connected.");
+		}catch(Exception e) {
+			JOptionPane.showMessageDialog(null, "Error!.");
+		}
+	
+	}
+	
+	
+}

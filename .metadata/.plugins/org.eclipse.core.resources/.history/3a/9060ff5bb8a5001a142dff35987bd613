@@ -1,0 +1,31 @@
+package javaEclipseTest;
+
+import java.time.*;
+import java.time.format.*;
+import java.util.*;
+
+public class IndexClass {
+	
+	
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+		
+		String word = null;
+		char[] words = word.toCharArray();
+		
+		System.out.print("Enter word: ");
+		word = input.nextLine();
+		
+		for(int a = word.length()-1; a >= 0; a--) {
+			words[a] = word.charAt(0);
+		}
+		
+		if(words.equals(word))
+		{
+			System.out.print("Pal");
+		}
+	}
+	
+	
+	
+}

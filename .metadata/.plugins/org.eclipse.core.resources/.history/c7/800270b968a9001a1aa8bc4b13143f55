@@ -1,0 +1,68 @@
+package javaEclipseTest;
+
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import java.awt.Font;
+import java.awt.Color;
+
+public class Guichuchu {
+
+	private JFrame frmMagPracticeKaa;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					Guichuchu window = new Guichuchu();
+					window.frmMagPracticeKaa.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the application.
+	 */
+	public Guichuchu() {
+		initialize();
+	}
+
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize() {
+		frmMagPracticeKaa = new JFrame();
+		frmMagPracticeKaa.setBackground(Color.YELLOW);
+		frmMagPracticeKaa.setFont(new Font("Bodoni MT Poster Compressed", Font.PLAIN, 14));
+		frmMagPracticeKaa.setResizable(false);
+		frmMagPracticeKaa.setTitle("Mag practice kaa");
+		frmMagPracticeKaa.setBounds(100, 100, 450, 300);
+		frmMagPracticeKaa.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frmMagPracticeKaa.getContentPane().setLayout(null);
+		
+		JLabel lblLabas = new JLabel("");
+		lblLabas.setBounds(138, 71, 124, 51);
+		frmMagPracticeKaa.getContentPane().add(lblLabas);
+		
+		JButton btnDisplay = new JButton("Show Message");
+		btnDisplay.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				lblLabas.setText("Gucci gang!");
+			}
+		});
+		btnDisplay.setBounds(138, 186, 124, 51);
+		frmMagPracticeKaa.getContentPane().add(btnDisplay);
+		
+		
+	}
+}

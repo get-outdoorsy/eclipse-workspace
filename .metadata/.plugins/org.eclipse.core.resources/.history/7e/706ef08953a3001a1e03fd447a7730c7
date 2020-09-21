@@ -1,6 +1,0 @@
-package javaEclipseTest;
-
-public class EncapsulationTest {
-	private password = "121233";
-	private email = "lulu.gmail.com";
-}

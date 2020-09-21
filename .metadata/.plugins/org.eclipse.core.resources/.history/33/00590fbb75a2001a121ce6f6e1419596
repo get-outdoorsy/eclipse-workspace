@@ -1,5 +1,0 @@
-package javaEclipseTest;
-
-public class OtherClass {
-	final int x = 145;
-}

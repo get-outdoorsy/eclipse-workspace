@@ -1,7 +1,0 @@
-package javaEclipseTest;
-
-public class Person {
-	String frstName = "Jay";
-	String lstName = "Mendezabal";
-	int age = 22;
-}

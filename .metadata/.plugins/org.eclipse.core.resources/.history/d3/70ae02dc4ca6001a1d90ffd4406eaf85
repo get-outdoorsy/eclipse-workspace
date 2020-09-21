@@ -1,0 +1,23 @@
+package javaEclipseTest;
+
+import java.io.*;
+
+public class FileTest {
+	
+	public FileTest(){
+		
+		
+		try {
+			File newFile = new File("C:\\Users\\Epoy\\Desktop\\testNewFile.txt");
+			if(newFile.createNewFile()) {
+				System.out.print("File created: "+newFile.getName());
+			}else {
+				System.out.print("File already exists");
+			}
+		}catch(Exception e) {
+			System.out.print("Something went wrong.");
+			e.printStackTrace();
+		}
+		
+	}
+}

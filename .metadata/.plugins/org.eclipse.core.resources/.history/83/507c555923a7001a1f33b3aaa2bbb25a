@@ -1,0 +1,55 @@
+package javaEclipseTest;
+
+//import java.io.*;
+
+import java.io.*;
+import java.math.*;
+import java.security.*;
+import java.text.*;
+import java.util.*;
+import java.util.concurrent.*;
+import java.util.regex.*;
+
+public class IndexClass {
+	
+	private static final Scanner scanner = new Scanner(System.in);
+	
+	
+    static int sockMerchant(int[] ar) {
+        int kaparehas = 0, socksPair = 0;
+
+        for(int a = 0; a < ar.length; a++){
+            for(int b = 0; b < ar.length; b++){
+
+                if(ar[a] == ar[b]){
+                    kaparehas+=1;
+                    System.out.print(kaparehas+" ");
+                    
+                }
+            }
+        }
+
+        socksPair =(kaparehas / 2);
+        System.out.print(socksPair+" socks");
+        return socksPair;
+
+    }
+    
+	public static void main(String[] args) {
+		//FileTest runIt = new FileTest();
+		try {
+			
+			int[] ar = {9,10,20,20,10,10,30,50,10,20};
+
+	        int result = sockMerchant(ar);
+
+			
+		}catch(Exception e) {
+			System.out.print("Error!");
+		}
+		
+		
+	}
+	
+	
+}
