@@ -12,4 +12,10 @@
 		<item key="width" value="504"/>
 		<item key="height" value="496"/>
 	</section>
+	<section name="org.eclipse.wb.internal.swing.model.property.editor.border.BorderDialog">
+		<item key="x" value="399"/>
+		<item key="y" value="190"/>
+		<item key="width" value="482"/>
+		<item key="height" value="380"/>
+	</section>
 </section>

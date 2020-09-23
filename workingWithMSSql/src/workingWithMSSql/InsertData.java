@@ -17,6 +17,8 @@ import javax.swing.table.DefaultTableModel;
 import javax.swing.ListSelectionModel;
 import javax.swing.JScrollBar;
 import javax.swing.JScrollPane;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 public class InsertData{
 
@@ -25,9 +27,12 @@ public class InsertData{
 	private JTextField txt_lastName;
 	private JLabel lblAge;
 	private JTextField txt_age;
+	
 	private String student_firstName;
 	private String student_lastName;
 	private int student_age = 0;
+	public int selectedRow;
+	
 	private JTable table;
 
 	
@@ -43,20 +48,17 @@ public class InsertData{
 				}
 			}
 		});
-		
 	}
-
 	public InsertData() {
 		initialize();
 		showData();
 	}
-	//SHOW DATA
+	//SHOW ALL DATA QUERY
 	public void showData()
 	{
 		Main main = new Main();
 		Connection conn = main.connectDB();
 		DefaultTableModel model = new DefaultTableModel(new String[]{"Student ID", "First Name", "Last Name", "Age"}, 0);
-		
 		
 		String fetchQuery = "SELECT * FROM student";
 		try {
@@ -70,14 +72,12 @@ public class InsertData{
 				model.addRow(new Object[] {a, b, c, d});
 				table.setModel(model);
 			}
-			
 			conn.close();
 		}catch(Exception e) {
 			e.printStackTrace();
 		}
-		
 	}
-	//INSERT DATA METHOD
+	//INSERT DATA QUERY
 	public void insertData(Connection conn, String student_firstName, String student_lastName, int student_age) {
 		String insertQuery = "INSERT INTO student(student_firstName, student_lastName, student_age) VALUES(?,?,?)";
 		try {
@@ -93,11 +93,58 @@ public class InsertData{
 			e.printStackTrace();
 		}
 	}
+	//DELETE DATA QUERY
+	public void deleteData(Connection conn) {
+		String temp_id = table.getValueAt(selectedRow, 0).toString();
+		int student_id = Integer.parseInt(temp_id);
+		String deleteQuery = "DELETE FROM student WHERE student_id = '"+student_id+"'";
+		try {
+			PreparedStatement sqlStatement = conn.prepareStatement(deleteQuery);
+			sqlStatement.executeUpdate();
+			
+			conn.close();
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+	}
+	//UPDATE DATA QUERY
+	private void updateData(Connection conn, String fname, String lname, int age) {
+		String temp_id = table.getValueAt(selectedRow, 0).toString();
+		int student_id = Integer.parseInt(temp_id);
+		String updateQuery = "UPDATE student SET student_firstName = ?, student_lastName = ?, student_age = ? WHERE student_id = ?";
+		try {
+			PreparedStatement sqlStatement = conn.prepareStatement(updateQuery);
+			sqlStatement.setInt(4, student_id);
+			sqlStatement.setString(1, fname);
+			sqlStatement.setString(2, lname);
+			sqlStatement.setInt(3, age);
+			sqlStatement.executeUpdate();
+			
+			conn.close();
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+	}
+	//Putting the selected values to textfield for update function
+	public void putRowValuesToFields(String fname, String lname, String age) {
+		txt_firstName.setText(fname);
+		txt_lastName.setText(lname);
+		txt_age.setText(age);
+	}
+	//Clear texts 
+	private void clearText() {
+		txt_firstName.setText("");
+		txt_lastName.setText("");
+		txt_age.setText("");
+	}
 
 	private void initialize() {
 		frm_insert = new JFrame();
-		frm_insert.setTitle("Insert");
-		frm_insert.setBounds(100, 100, 487, 171);
+		frm_insert.setAlwaysOnTop(true);
+		frm_insert.setAutoRequestFocus(false);
+		frm_insert.setResizable(false);
+		frm_insert.setTitle("MS SQL");
+		frm_insert.setBounds(100, 100, 529, 171);
 		frm_insert.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frm_insert.getContentPane().setLayout(null);
 		
@@ -113,10 +160,10 @@ public class InsertData{
 				InsertData insert = new InsertData();
 				insert.insertData(conn, student_firstName, student_lastName, student_age);
 				showData();
-				
+				clearText();
 			}
 		});
-		btnInsert.setBounds(88, 92, 86, 23);
+		btnInsert.setBounds(10, 87, 56, 34);
 		frm_insert.getContentPane().add(btnInsert);
 		
 		JLabel lblNewLabel = new JLabel("First Name");
@@ -124,7 +171,7 @@ public class InsertData{
 		frm_insert.getContentPane().add(lblNewLabel);
 		
 		txt_firstName = new JTextField();
-		txt_firstName.setBounds(88, 8, 86, 20);
+		txt_firstName.setBounds(88, 8, 132, 20);
 		frm_insert.getContentPane().add(txt_firstName);
 		txt_firstName.setColumns(10);
 		
@@ -133,7 +180,7 @@ public class InsertData{
 		frm_insert.getContentPane().add(lblNewLabel_1);
 		
 		txt_lastName = new JTextField();
-		txt_lastName.setBounds(88, 33, 86, 20);
+		txt_lastName.setBounds(88, 33, 132, 20);
 		frm_insert.getContentPane().add(txt_lastName);
 		txt_lastName.setColumns(10);
 		
@@ -143,35 +190,73 @@ public class InsertData{
 		
 		txt_age = new JTextField();
 		txt_age.setColumns(10);
-		txt_age.setBounds(88, 61, 86, 20);
+		txt_age.setBounds(88, 61, 132, 20);
 		frm_insert.getContentPane().add(txt_age);
 		
+		//Gets the student id of selected row
 		table = new JTable();
-		table.setColumnSelectionAllowed(true);
-		table.setCellSelectionEnabled(true);
-		table.setSelectionMode(ListSelectionModel.SINGLE_INTERVAL_SELECTION);
+		table.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				DefaultTableModel model = (DefaultTableModel)table.getModel();
+				
+				selectedRow = table.getSelectedRow();
+				String id = table.getValueAt(selectedRow, 0).toString();
+				String fname = table.getValueAt(selectedRow, 1).toString();
+				String lname = table.getValueAt(selectedRow, 2).toString();
+				String age = table.getValueAt(selectedRow, 3).toString();
+				
+				putRowValuesToFields(fname, lname, age);
+			}
+		});
+		table.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		table.setModel(new DefaultTableModel(
 			new Object[][] {
 			},
 			new String[] {
-				"Student ID", "Student First Name", "Student Last Name", "Student Age"
 			}
-		) {
-			Class[] columnTypes = new Class[] {
-				Integer.class, String.class, String.class, Integer.class
-			};
-			public Class getColumnClass(int columnIndex) {
-				return columnTypes[columnIndex];
-			}
-		});
-		table.getColumnModel().getColumn(1).setPreferredWidth(112);
-		table.getColumnModel().getColumn(2).setPreferredWidth(108);
-		table.getColumnModel().getColumn(3).setPreferredWidth(76);
+		));
 		table.setBounds(184, 11, 277, 111);
 		frm_insert.getContentPane().add(table);
 		
 		JScrollPane scrollPane = new JScrollPane(table);
-		scrollPane.setBounds(188, 11, 273, 111);
+		scrollPane.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent arg0) {
+				
+			}
+		});
+		scrollPane.setBounds(230, 10, 273, 111);
 		frm_insert.getContentPane().add(scrollPane);
+		
+		JButton btnEdit = new JButton("Edit");
+		btnEdit.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Main main = new Main();
+				Connection conn = main.connectDB();
+				String fname = txt_firstName.getText();
+				String lname = txt_lastName.getText();
+				String temp_age = txt_age.getText();
+				int age = Integer.parseInt(temp_age);
+				updateData(conn, fname, lname, age);
+				showData();
+				clearText();
+			}
+		});
+		btnEdit.setBounds(76, 87, 56, 34);
+		frm_insert.getContentPane().add(btnEdit);
+		
+		JButton btnDelete = new JButton("Delete");
+		btnDelete.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				Main main = new Main();
+				Connection conn = main.connectDB();
+				deleteData(conn);
+				showData();
+				clearText();
+			}
+		});
+		btnDelete.setBounds(142, 87, 78, 34);
+		frm_insert.getContentPane().add(btnDelete);
 	}
 }
