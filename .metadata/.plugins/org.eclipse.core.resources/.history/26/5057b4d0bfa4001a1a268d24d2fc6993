@@ -1,7 +1,0 @@
-package javaEclipseTest;
-
-interface InterfaceKuno {
-	//si interface parang same lang with abstract. parang mas ahead lang ata ang interface
-	public void labasMo();
-	public void awitKa();
-}

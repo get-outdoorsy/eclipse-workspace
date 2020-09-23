@@ -1,6 +1,0 @@
-package javaEclipseTest;
-
-interface InterfaceKuno {
-	public void labasMo();
-	public void awitKa();
-}
