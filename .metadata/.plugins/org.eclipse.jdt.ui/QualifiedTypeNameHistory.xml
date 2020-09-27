@@ -12,4 +12,12 @@
 <fullyQualifiedTypeName name="java.sql.Statement"/>
 <fullyQualifiedTypeName name="java.sql.ResultSet"/>
 <fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
+<fullyQualifiedTypeName name="workingWithMSSql.Main"/>
+<fullyQualifiedTypeName name="org.jdatepicker.impl.UtilDateModel"/>
+<fullyQualifiedTypeName name="org.jdatepicker.impl.JDatePanelImpl"/>
+<fullyQualifiedTypeName name="org.jdatepicker.impl.JDatePickerImpl"/>
+<fullyQualifiedTypeName name="java.util.Properties"/>
+<fullyQualifiedTypeName name="java.text.SimpleDateFormat"/>
+<fullyQualifiedTypeName name="java.util.Calendar"/>
+<fullyQualifiedTypeName name="javax.swing.JPanel"/>
 </qualifiedTypeNameHistroy>

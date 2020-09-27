@@ -29,26 +29,7 @@ public class Main {
 			return null;
 		}
 	}
-	public void showData(Connection conn) {
-		String showQuery = "SELECT student_firstName FROM dbo.student";
-		
-		try {
-			Statement statement = conn.createStatement();
-			ResultSet rs;
-			
-			rs = statement.executeQuery(showQuery);
-			while(rs.next()) {
-				String firstName = rs.getString("student_firstName");
-				System.out.println(firstName);
-			}
-			
-		}catch(Exception e) {
-			e.printStackTrace();
-		}
-	}
 	public static void main(String[] args) {
-		//Connection conn = connectDB();
-		//showData(conn);
 	}
 
 }

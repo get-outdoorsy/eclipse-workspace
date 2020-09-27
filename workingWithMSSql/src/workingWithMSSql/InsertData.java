@@ -81,7 +81,6 @@ public class InsertData{
 	public void insertData(Connection conn, String student_firstName, String student_lastName, int student_age) {
 		String insertQuery = "INSERT INTO student(student_firstName, student_lastName, student_age) VALUES(?,?,?)";
 		try {
-			//System.out.print(student_firstName+student_lastName+student_age);
 			PreparedStatement sqlStatement = conn.prepareStatement(insertQuery);
 			sqlStatement.setString(1, student_firstName);
 			sqlStatement.setString(2, student_lastName);
